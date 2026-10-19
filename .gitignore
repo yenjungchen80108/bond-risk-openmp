@@ -1,0 +1,18 @@
+# Generated data (recreate with: make data N=100000, then ./portfolio)
+bonds.csv
+results.csv
+
+# Build outputs
+/portfolio
+/convergence
+/test_project
+*.o
+*.dSYM/
+
+# Python
+__pycache__/
+.venv/
+
+# macOS / editor files
+.DS_Store
+.vscode/
