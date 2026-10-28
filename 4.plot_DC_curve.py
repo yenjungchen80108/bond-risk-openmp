@@ -1,6 +1,7 @@
 """ file: 4.plot_DC_curve.py
 Purpose: Plot duration / convexity of the bond portfolio (from results.csv),
 and the price-yield curve of one bond with its duration / convexity approximations.
+Usage: python3 4.plot_DC_curve.py   -> fig/portfolio_duration_convexity.png, fig/price_yield_curve.png
 """
 
 import numpy as np
@@ -27,7 +28,7 @@ ax[1, 0].set(xlabel="Modified duration", ylabel="Count", title="Duration distrib
 ax[1, 1].hist(df["convexity"], bins=60, color="C1")
 ax[1, 1].set(xlabel="Convexity", ylabel="Count", title="Convexity distribution")
 fig.tight_layout()
-fig.savefig("portfolio_duration_convexity.png", dpi=200)
+fig.savefig("fig/portfolio_duration_convexity.png", dpi=200)
 
 # ---- Figure 2: price-yield curve of one bond ----
 b = df.iloc[0]                                   # change the row to look at another bond
@@ -52,5 +53,5 @@ plt.xlabel("Yield"); plt.ylabel("Price")
 plt.title(f"Bond id={int(b['id'])}: {int(b['years'])}-year, coupon {b['coupon']:.2f}")
 plt.legend()
 plt.tight_layout()
-plt.savefig("price_yield_curve.png", dpi=200)
+plt.savefig("fig/price_yield_curve.png", dpi=200)
 plt.show()

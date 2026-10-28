@@ -60,7 +60,7 @@ int main(void) {
     int bad = 0;
     for (int i = 0; i < n; i++) {
         if (!isfinite(ytm[i])) bad++;
-        fprintf(out, "%d,%.8f,%.6f,%.6f\n", i, ytm[i], dur[i], cvx[i]);
+        fprintf(out, "%d,%.12f,%.6f,%.6f\n", i, ytm[i], dur[i], cvx[i]);
     }
     fclose(out);
     if (bad) printf("warning: %d bonds did not converge (nan/inf)\n", bad);
