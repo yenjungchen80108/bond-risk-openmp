@@ -1,6 +1,9 @@
 # Generated data (recreate with: make data N=100000, then ./portfolio)
 bonds.csv
 results.csv
+results_gpu.csv
+scenario
+portfolio_gpu
 
 # Build outputs
 /portfolio

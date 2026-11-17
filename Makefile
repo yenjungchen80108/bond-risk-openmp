@@ -25,7 +25,10 @@ N ?= 100000
 
 .PHONY: all test data clean
 
-all: portfolio convergence
+all: portfolio convergence scenario
+
+scenario: 7.scenario.c 1.ytm.c 2.duration_convexity.c 1.ytm.h 2.duration_convexity.h
+	$(CC) $(CFLAGS) $(OMP_CFLAGS) 7.scenario.c 1.ytm.c 2.duration_convexity.c -o $@ $(OMP_LDFLAGS) -lm
 
 portfolio: 3.portfolio.c 1.ytm.c 2.duration_convexity.c 1.ytm.h 2.duration_convexity.h
 	$(CC) $(CFLAGS) $(OMP_CFLAGS) 3.portfolio.c 1.ytm.c 2.duration_convexity.c -o $@ $(OMP_LDFLAGS) -lm
@@ -43,4 +46,4 @@ data:
 	python3 3.gen_portfolio.py $(N)
 
 clean:
-	rm -f portfolio convergence test_project results.csv
+	rm -f portfolio convergence test_project results.csv scenario_accuracy.csv scenario_timing.csv
