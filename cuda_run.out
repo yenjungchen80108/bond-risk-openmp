@@ -1,0 +1,32 @@
+##### node: e22-06.hpc.usc.edu #####
+Tesla P100-PCIE-16GB
+##### CPU OpenMP, 1 thread(s), schedule dynamic,1000 #####
+bonds: 1000000, threads: 1, time: 11.422061 s
+e2e total: 13.789574 s (read 0.882581, compute 11.422061, write 1.484907)
+##### CPU OpenMP, 8 thread(s), schedule dynamic,1000 #####
+bonds: 1000000, threads: 8, time: 1.632858 s
+e2e total: 3.923839 s (read 0.801237, compute 1.632858, write 1.489716)
+##### GPU CUDA, 128 threads per block #####
+GPU: Tesla P100-PCIE-16GB, bonds: 1000000, threads per block: 128, blocks: 7813
+kernel (median of 5 launches): 0.033946 s
+e2e total: 2.768647 s (read 0.801242, init 0.200180, h2d 0.005177, kernel 0.264441, d2h 0.011369, write 1.486238)
+Newton iterations per bond: mean 4.43, max 7
+iterations histogram: 2:1193 3:80926 4:490289 5:352217 6:64383 7:10992
+warp efficiency (useful iterations / iterations paid by the warp): 71.3%
+compared with results.csv (1000000 bonds): max |ytm diff| = 5.002e-13, |duration diff| = 5.000e-07, |convexity diff| = 1.667e-06
+##### GPU CUDA, 256 threads per block #####
+GPU: Tesla P100-PCIE-16GB, bonds: 1000000, threads per block: 256, blocks: 3907
+kernel (median of 5 launches): 0.030811 s
+e2e total: 2.528997 s (read 0.798513, init 0.189942, h2d 0.004255, kernel 0.032076, d2h 0.012512, write 1.491699)
+Newton iterations per bond: mean 4.43, max 7
+iterations histogram: 2:1193 3:80926 4:490289 5:352217 6:64383 7:10992
+warp efficiency (useful iterations / iterations paid by the warp): 71.3%
+compared with results.csv (1000000 bonds): max |ytm diff| = 5.002e-13, |duration diff| = 5.000e-07, |convexity diff| = 1.667e-06
+##### GPU CUDA, 512 threads per block #####
+GPU: Tesla P100-PCIE-16GB, bonds: 1000000, threads per block: 512, blocks: 1954
+kernel (median of 5 launches): 0.033383 s
+e2e total: 2.526239 s (read 0.797995, init 0.190558, h2d 0.004240, kernel 0.030503, d2h 0.013073, write 1.489870)
+Newton iterations per bond: mean 4.43, max 7
+iterations histogram: 2:1193 3:80926 4:490289 5:352217 6:64383 7:10992
+warp efficiency (useful iterations / iterations paid by the warp): 71.3%
+compared with results.csv (1000000 bonds): max |ytm diff| = 5.002e-13, |duration diff| = 5.000e-07, |convexity diff| = 1.667e-06
