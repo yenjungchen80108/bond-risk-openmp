@@ -1,4 +1,4 @@
-/* 9.portfolio.cu -- CUDA version of 3.portfolio.c: one GPU thread per bond.
+/* 8.portfolio.cu -- CUDA version of 3.portfolio.c: one GPU thread per bond.
  *
  * Reads bonds.csv, solves YTM (Newton), duration and convexity for every bond on the GPU,
  * and writes results_gpu.csv (same format as results.csv from the OpenMP program).
@@ -13,7 +13,7 @@
  * If results.csv (OpenMP/CPU result) exists, the GPU result is compared with it.
  *
  * Build (Discovery):  module purge; module load usc; module load cuda
- *                     nvcc -O2 -o portfolio_gpu 9.portfolio.cu
+ *                     nvcc -O2 -o portfolio_gpu 8.portfolio.cu
  * Run:                ./portfolio_gpu [threads_per_block]      (default 256)
  */
 #include <stdio.h>
