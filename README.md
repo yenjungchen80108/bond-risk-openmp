@@ -190,7 +190,7 @@ The error grows by a factor of about 8 each time the shock doubles (third order)
 | 64          | 0.5414 s          | 0.0817 s           | 0.0040 s | 0.000087 s | 0.0072 s    | 11.4×                        |
 | 256         | 2.1873 s          | 0.3254 s           | 0.0167 s | 0.000080 s | 0.0072 s    | 45.3×                        |
 
-The one-time cost of computing D and C for all 100,000 bonds is 0.0515 s with one thread and 0.0071 s with eight. Dividing it by the exact cost per scenario gives the break-even number of scenarios: **S\* = 6.0 with one thread and 5.6 with eight** (the code evaluates the price six times per bond for D and C). OpenMP speeds up exact repricing by 6.3–6.7× and the computation of D and C by 7.3×, so the two methods become faster by almost the same factor.
+The one-time cost of the computing D and C for all 100,000 bonds is 0.0515 s with one thread and 0.0071 s with eight. Dividing it by the exact cost per scenario gives the break-even number of scenarios: **S\* = 6.0 with one thread and 5.6 with eight** (the code evaluates the price six times per bond for D and C). OpenMP speeds up exact repricing by 6.3–6.7× and the computation of D and C by 7.3×, so the two methods become faster by almost the same factor.
 
 ### 3. GPU (CUDA) on USC CARC Discovery
 
